@@ -10,10 +10,10 @@ exclude = [
     "c-blosc2/compat/**",
     "c-blosc2/tests/**",
     "c-blosc2/bench/**",
-    "c-blosc2/internal-complibs/zlib-1.2.11/contrib/**",
-    "c-blosc2/internal-complibs/zlib-1.2.11/examples/**",
-    "c-blosc2/internal-complibs/zlib-1.2.11/doc/**",
-    "c-blosc2/internal-complibs/zstd-1.5.2/legacy/**",
+    "c-blosc2/internal-complibs/zlib-ng-2.0.7/contrib/**",
+    "c-blosc2/internal-complibs/zlib-ng-2.0.7/examples/**",
+    "c-blosc2/internal-complibs/zlib-ng-2.0.7/doc/**",
+    "c-blosc2/internal-complibs/zstd-1.5.5/legacy/**",
 ]
 repository = "https://github.com/maiteko/blosc2-src-rs"
 keywords = ["compression"]
@@ -24,6 +24,8 @@ description = "FFI bindings for c-blosc2"
 [features]
 # run bindgen when building, requires llvm
 bindgen = []
+# zlib = [] # the version of zlib in c-blosc2 won't support MSCV currently
+zstd = []
 
 [dependencies]
 cc = "1.0"

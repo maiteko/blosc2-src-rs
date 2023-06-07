@@ -24,23 +24,24 @@ fn build_cc() {
 
     build.include("c-blosc2/internal-complibs/lz4-1.9.4");
     build.define("HAVE_LZ4", None);
+
     if cfg!(feature = "zlib") {
-        add_file(&mut build, "c-blosc2/internal-complibs/zlib-1.2.11");
-        build.include("c-blosc2/internal-complibs/zlib-1.2.11");
+        add_file(&mut build, "c-blosc2/internal-complibs/zlib-ng-2.0.7");
+        build.include("c-blosc2/internal-complibs/zlib-ng-2.0.7");
         build.define("HAVE_ZLIB", None);
     }
     if cfg!(feature = "zstd") {
-        add_file(&mut build, "c-blosc2/internal-complibs/zstd-1.5.2/common");
-        add_file(&mut build, "c-blosc2/internal-complibs/zstd-1.5.2/compress");
+        add_file(&mut build, "c-blosc2/internal-complibs/zstd-1.5.5/common");
+        add_file(&mut build, "c-blosc2/internal-complibs/zstd-1.5.5/compress");
         add_file(
             &mut build,
-            "c-blosc2/internal-complibs/zstd-1.5.2/decompress",
+            "c-blosc2/internal-complibs/zstd-1.5.5/decompress",
         );
         add_file(
             &mut build,
-            "c-blosc2/internal-complibs/zstd-1.5.2/dictBuilder",
+            "c-blosc2/internal-complibs/zstd-1.5.5/dictBuilder",
         );
-        build.include("c-blosc2/internal-complibs/zstd-1.5.2");
+        build.include("c-blosc2/internal-complibs/zstd-1.5.5");
         build.define("HAVE_ZSTD", None);
     }
 
