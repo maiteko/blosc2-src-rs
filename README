@@ -1,0 +1,3 @@
+Library for automatically building c-blosc2 and generating bindings for Rust.
+
+By default it uses bindings.rs which is checked into the library. bindings can be regenerated using the `bindgen` feature, however this requires llvm to be installed locally.
