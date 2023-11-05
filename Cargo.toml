@@ -20,16 +20,10 @@ keywords = ["compression"]
 categories = ["external-ffi-bindings", "compression"]
 description = "FFI bindings for c-blosc2"
 
-
 [features]
 # run bindgen when building, requires llvm
 bindgen = []
-# zlib = [] # the version of zlib in c-blosc2 won't support MSCV currently
-zstd = []
-
-[dependencies]
-cc = "1.0"
 
 [build-dependencies]
 bindgen = "0.65.1"
-cc = "1.0"
+cmake = "0.1"
