@@ -19,406 +19,37 @@ pub const BLOSC2_MAX_METALAYERS: u32 = 16;
 pub const BLOSC2_METALAYER_NAME_MAXLEN: u32 = 31;
 pub const BLOSC2_MAX_VLMETALAYERS: u32 = 8192;
 pub const BLOSC2_VLMETALAYERS_NAME_MAXLEN: u32 = 31;
-pub type __off_t = ::std::os::raw::c_long;
-pub type __off64_t = ::std::os::raw::c_long;
-pub type __time_t = ::std::os::raw::c_long;
-pub type __syscall_slong_t = ::std::os::raw::c_long;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
-pub struct timespec {
-    pub tv_sec: __time_t,
-    pub tv_nsec: __syscall_slong_t,
+pub struct _iobuf {
+    pub _Placeholder: *mut ::std::os::raw::c_void,
 }
 #[test]
-fn bindgen_test_layout_timespec() {
-    const UNINIT: ::std::mem::MaybeUninit<timespec> = ::std::mem::MaybeUninit::uninit();
+fn bindgen_test_layout__iobuf() {
+    const UNINIT: ::std::mem::MaybeUninit<_iobuf> = ::std::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<timespec>(),
-        16usize,
-        concat!("Size of: ", stringify!(timespec))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<timespec>(),
+        ::std::mem::size_of::<_iobuf>(),
         8usize,
-        concat!("Alignment of ", stringify!(timespec))
+        concat!("Size of: ", stringify!(_iobuf))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).tv_sec) as usize - ptr as usize },
+        ::std::mem::align_of::<_iobuf>(),
+        8usize,
+        concat!("Alignment of ", stringify!(_iobuf))
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr)._Placeholder) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
-            stringify!(timespec),
+            stringify!(_iobuf),
             "::",
-            stringify!(tv_sec)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).tv_nsec) as usize - ptr as usize },
-        8usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(timespec),
-            "::",
-            stringify!(tv_nsec)
+            stringify!(_Placeholder)
         )
     );
 }
-pub type FILE = _IO_FILE;
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct _IO_marker {
-    _unused: [u8; 0],
-}
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct _IO_codecvt {
-    _unused: [u8; 0],
-}
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct _IO_wide_data {
-    _unused: [u8; 0],
-}
-pub type _IO_lock_t = ::std::os::raw::c_void;
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct _IO_FILE {
-    pub _flags: ::std::os::raw::c_int,
-    pub _IO_read_ptr: *mut ::std::os::raw::c_char,
-    pub _IO_read_end: *mut ::std::os::raw::c_char,
-    pub _IO_read_base: *mut ::std::os::raw::c_char,
-    pub _IO_write_base: *mut ::std::os::raw::c_char,
-    pub _IO_write_ptr: *mut ::std::os::raw::c_char,
-    pub _IO_write_end: *mut ::std::os::raw::c_char,
-    pub _IO_buf_base: *mut ::std::os::raw::c_char,
-    pub _IO_buf_end: *mut ::std::os::raw::c_char,
-    pub _IO_save_base: *mut ::std::os::raw::c_char,
-    pub _IO_backup_base: *mut ::std::os::raw::c_char,
-    pub _IO_save_end: *mut ::std::os::raw::c_char,
-    pub _markers: *mut _IO_marker,
-    pub _chain: *mut _IO_FILE,
-    pub _fileno: ::std::os::raw::c_int,
-    pub _flags2: ::std::os::raw::c_int,
-    pub _old_offset: __off_t,
-    pub _cur_column: ::std::os::raw::c_ushort,
-    pub _vtable_offset: ::std::os::raw::c_schar,
-    pub _shortbuf: [::std::os::raw::c_char; 1usize],
-    pub _lock: *mut _IO_lock_t,
-    pub _offset: __off64_t,
-    pub _codecvt: *mut _IO_codecvt,
-    pub _wide_data: *mut _IO_wide_data,
-    pub _freeres_list: *mut _IO_FILE,
-    pub _freeres_buf: *mut ::std::os::raw::c_void,
-    pub __pad5: usize,
-    pub _mode: ::std::os::raw::c_int,
-    pub _unused2: [::std::os::raw::c_char; 20usize],
-}
-#[test]
-fn bindgen_test_layout__IO_FILE() {
-    const UNINIT: ::std::mem::MaybeUninit<_IO_FILE> = ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<_IO_FILE>(),
-        216usize,
-        concat!("Size of: ", stringify!(_IO_FILE))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<_IO_FILE>(),
-        8usize,
-        concat!("Alignment of ", stringify!(_IO_FILE))
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._flags) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_IO_FILE),
-            "::",
-            stringify!(_flags)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._IO_read_ptr) as usize - ptr as usize },
-        8usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_IO_FILE),
-            "::",
-            stringify!(_IO_read_ptr)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._IO_read_end) as usize - ptr as usize },
-        16usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_IO_FILE),
-            "::",
-            stringify!(_IO_read_end)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._IO_read_base) as usize - ptr as usize },
-        24usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_IO_FILE),
-            "::",
-            stringify!(_IO_read_base)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._IO_write_base) as usize - ptr as usize },
-        32usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_IO_FILE),
-            "::",
-            stringify!(_IO_write_base)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._IO_write_ptr) as usize - ptr as usize },
-        40usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_IO_FILE),
-            "::",
-            stringify!(_IO_write_ptr)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._IO_write_end) as usize - ptr as usize },
-        48usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_IO_FILE),
-            "::",
-            stringify!(_IO_write_end)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._IO_buf_base) as usize - ptr as usize },
-        56usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_IO_FILE),
-            "::",
-            stringify!(_IO_buf_base)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._IO_buf_end) as usize - ptr as usize },
-        64usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_IO_FILE),
-            "::",
-            stringify!(_IO_buf_end)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._IO_save_base) as usize - ptr as usize },
-        72usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_IO_FILE),
-            "::",
-            stringify!(_IO_save_base)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._IO_backup_base) as usize - ptr as usize },
-        80usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_IO_FILE),
-            "::",
-            stringify!(_IO_backup_base)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._IO_save_end) as usize - ptr as usize },
-        88usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_IO_FILE),
-            "::",
-            stringify!(_IO_save_end)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._markers) as usize - ptr as usize },
-        96usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_IO_FILE),
-            "::",
-            stringify!(_markers)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._chain) as usize - ptr as usize },
-        104usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_IO_FILE),
-            "::",
-            stringify!(_chain)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._fileno) as usize - ptr as usize },
-        112usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_IO_FILE),
-            "::",
-            stringify!(_fileno)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._flags2) as usize - ptr as usize },
-        116usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_IO_FILE),
-            "::",
-            stringify!(_flags2)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._old_offset) as usize - ptr as usize },
-        120usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_IO_FILE),
-            "::",
-            stringify!(_old_offset)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._cur_column) as usize - ptr as usize },
-        128usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_IO_FILE),
-            "::",
-            stringify!(_cur_column)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._vtable_offset) as usize - ptr as usize },
-        130usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_IO_FILE),
-            "::",
-            stringify!(_vtable_offset)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._shortbuf) as usize - ptr as usize },
-        131usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_IO_FILE),
-            "::",
-            stringify!(_shortbuf)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._lock) as usize - ptr as usize },
-        136usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_IO_FILE),
-            "::",
-            stringify!(_lock)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._offset) as usize - ptr as usize },
-        144usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_IO_FILE),
-            "::",
-            stringify!(_offset)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._codecvt) as usize - ptr as usize },
-        152usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_IO_FILE),
-            "::",
-            stringify!(_codecvt)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._wide_data) as usize - ptr as usize },
-        160usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_IO_FILE),
-            "::",
-            stringify!(_wide_data)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._freeres_list) as usize - ptr as usize },
-        168usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_IO_FILE),
-            "::",
-            stringify!(_freeres_list)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._freeres_buf) as usize - ptr as usize },
-        176usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_IO_FILE),
-            "::",
-            stringify!(_freeres_buf)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__pad5) as usize - ptr as usize },
-        184usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_IO_FILE),
-            "::",
-            stringify!(__pad5)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._mode) as usize - ptr as usize },
-        192usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_IO_FILE),
-            "::",
-            stringify!(_mode)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._unused2) as usize - ptr as usize },
-        196usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_IO_FILE),
-            "::",
-            stringify!(_unused2)
-        )
-    );
-}
+pub type FILE = _iobuf;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct blosc2_stdio_file {
@@ -491,17 +122,147 @@ extern "C" {
         size: i64,
     ) -> ::std::os::raw::c_int;
 }
+pub type DWORD = ::std::os::raw::c_ulong;
+pub type LONG = ::std::os::raw::c_long;
+pub type LONGLONG = ::std::os::raw::c_longlong;
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union _LARGE_INTEGER {
+    pub __bindgen_anon_1: _LARGE_INTEGER__bindgen_ty_1,
+    pub u: _LARGE_INTEGER__bindgen_ty_2,
+    pub QuadPart: LONGLONG,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _LARGE_INTEGER__bindgen_ty_1 {
+    pub LowPart: DWORD,
+    pub HighPart: LONG,
+}
+#[test]
+fn bindgen_test_layout__LARGE_INTEGER__bindgen_ty_1() {
+    const UNINIT: ::std::mem::MaybeUninit<_LARGE_INTEGER__bindgen_ty_1> =
+        ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<_LARGE_INTEGER__bindgen_ty_1>(),
+        8usize,
+        concat!("Size of: ", stringify!(_LARGE_INTEGER__bindgen_ty_1))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<_LARGE_INTEGER__bindgen_ty_1>(),
+        4usize,
+        concat!("Alignment of ", stringify!(_LARGE_INTEGER__bindgen_ty_1))
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).LowPart) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_LARGE_INTEGER__bindgen_ty_1),
+            "::",
+            stringify!(LowPart)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).HighPart) as usize - ptr as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_LARGE_INTEGER__bindgen_ty_1),
+            "::",
+            stringify!(HighPart)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _LARGE_INTEGER__bindgen_ty_2 {
+    pub LowPart: DWORD,
+    pub HighPart: LONG,
+}
+#[test]
+fn bindgen_test_layout__LARGE_INTEGER__bindgen_ty_2() {
+    const UNINIT: ::std::mem::MaybeUninit<_LARGE_INTEGER__bindgen_ty_2> =
+        ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<_LARGE_INTEGER__bindgen_ty_2>(),
+        8usize,
+        concat!("Size of: ", stringify!(_LARGE_INTEGER__bindgen_ty_2))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<_LARGE_INTEGER__bindgen_ty_2>(),
+        4usize,
+        concat!("Alignment of ", stringify!(_LARGE_INTEGER__bindgen_ty_2))
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).LowPart) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_LARGE_INTEGER__bindgen_ty_2),
+            "::",
+            stringify!(LowPart)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).HighPart) as usize - ptr as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_LARGE_INTEGER__bindgen_ty_2),
+            "::",
+            stringify!(HighPart)
+        )
+    );
+}
+#[test]
+fn bindgen_test_layout__LARGE_INTEGER() {
+    const UNINIT: ::std::mem::MaybeUninit<_LARGE_INTEGER> = ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<_LARGE_INTEGER>(),
+        8usize,
+        concat!("Size of: ", stringify!(_LARGE_INTEGER))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<_LARGE_INTEGER>(),
+        8usize,
+        concat!("Alignment of ", stringify!(_LARGE_INTEGER))
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).u) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_LARGE_INTEGER),
+            "::",
+            stringify!(u)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).QuadPart) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_LARGE_INTEGER),
+            "::",
+            stringify!(QuadPart)
+        )
+    );
+}
+pub type LARGE_INTEGER = _LARGE_INTEGER;
 pub const BLOSC1_VERSION_FORMAT_PRE1: _bindgen_ty_4 = 1;
 pub const BLOSC1_VERSION_FORMAT: _bindgen_ty_4 = 2;
 pub const BLOSC2_VERSION_FORMAT_ALPHA: _bindgen_ty_4 = 3;
 pub const BLOSC2_VERSION_FORMAT_BETA1: _bindgen_ty_4 = 4;
 pub const BLOSC2_VERSION_FORMAT_STABLE: _bindgen_ty_4 = 5;
 pub const BLOSC2_VERSION_FORMAT: _bindgen_ty_4 = 5;
-pub type _bindgen_ty_4 = ::std::os::raw::c_uint;
+pub type _bindgen_ty_4 = ::std::os::raw::c_int;
 pub const BLOSC2_VERSION_FRAME_FORMAT_BETA2: _bindgen_ty_5 = 1;
 pub const BLOSC2_VERSION_FRAME_FORMAT_RC1: _bindgen_ty_5 = 2;
 pub const BLOSC2_VERSION_FRAME_FORMAT: _bindgen_ty_5 = 2;
-pub type _bindgen_ty_5 = ::std::os::raw::c_uint;
+pub type _bindgen_ty_5 = ::std::os::raw::c_int;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct blosc2_instr {
@@ -571,7 +332,7 @@ pub const BLOSC2_MAX_OVERHEAD: _bindgen_ty_6 = 32;
 pub const BLOSC2_MAX_BUFFERSIZE: _bindgen_ty_6 = 2147483615;
 pub const BLOSC_MAX_TYPESIZE: _bindgen_ty_6 = 255;
 pub const BLOSC_MIN_BUFFERSIZE: _bindgen_ty_6 = 32;
-pub type _bindgen_ty_6 = ::std::os::raw::c_uint;
+pub type _bindgen_ty_6 = ::std::os::raw::c_int;
 pub const BLOSC2_DEFINED_TUNER_START: _bindgen_ty_7 = 0;
 pub const BLOSC2_DEFINED_TUNER_STOP: _bindgen_ty_7 = 31;
 pub const BLOSC2_GLOBAL_REGISTERED_TUNER_START: _bindgen_ty_7 = 32;
@@ -579,12 +340,12 @@ pub const BLOSC2_GLOBAL_REGISTERED_TUNER_STOP: _bindgen_ty_7 = 159;
 pub const BLOSC2_GLOBAL_REGISTERED_TUNERS: _bindgen_ty_7 = 0;
 pub const BLOSC2_USER_REGISTERED_TUNER_START: _bindgen_ty_7 = 160;
 pub const BLOSC2_USER_REGISTERED_TUNER_STOP: _bindgen_ty_7 = 255;
-pub type _bindgen_ty_7 = ::std::os::raw::c_uint;
+pub type _bindgen_ty_7 = ::std::os::raw::c_int;
 pub const BLOSC_STUNE: _bindgen_ty_8 = 0;
 pub const BLOSC_LAST_TUNER: _bindgen_ty_8 = 1;
 pub const BLOSC_LAST_REGISTERED_TUNE: _bindgen_ty_8 = 31;
 #[doc = " @brief Codes for the different tuners shipped with Blosc"]
-pub type _bindgen_ty_8 = ::std::os::raw::c_uint;
+pub type _bindgen_ty_8 = ::std::os::raw::c_int;
 pub const BLOSC2_DEFINED_FILTERS_START: _bindgen_ty_9 = 0;
 pub const BLOSC2_DEFINED_FILTERS_STOP: _bindgen_ty_9 = 31;
 pub const BLOSC2_GLOBAL_REGISTERED_FILTERS_START: _bindgen_ty_9 = 32;
@@ -594,7 +355,7 @@ pub const BLOSC2_USER_REGISTERED_FILTERS_START: _bindgen_ty_9 = 160;
 pub const BLOSC2_USER_REGISTERED_FILTERS_STOP: _bindgen_ty_9 = 255;
 pub const BLOSC2_MAX_FILTERS: _bindgen_ty_9 = 6;
 pub const BLOSC2_MAX_UDFILTERS: _bindgen_ty_9 = 16;
-pub type _bindgen_ty_9 = ::std::os::raw::c_uint;
+pub type _bindgen_ty_9 = ::std::os::raw::c_int;
 #[doc = "!< No shuffle (for compatibility with Blosc1)."]
 pub const BLOSC_NOSHUFFLE: _bindgen_ty_10 = 0;
 #[doc = "!< No filter."]
@@ -611,7 +372,7 @@ pub const BLOSC_TRUNC_PREC: _bindgen_ty_10 = 4;
 pub const BLOSC_LAST_FILTER: _bindgen_ty_10 = 5;
 pub const BLOSC_LAST_REGISTERED_FILTER: _bindgen_ty_10 = 35;
 #[doc = " @brief Codes for filters.\n\n @sa #blosc1_compress"]
-pub type _bindgen_ty_10 = ::std::os::raw::c_uint;
+pub type _bindgen_ty_10 = ::std::os::raw::c_int;
 #[doc = "!< byte-wise shuffle"]
 pub const BLOSC_DOSHUFFLE: _bindgen_ty_11 = 1;
 #[doc = "!< plain copy"]
@@ -621,7 +382,7 @@ pub const BLOSC_DOBITSHUFFLE: _bindgen_ty_11 = 4;
 #[doc = "!< delta coding"]
 pub const BLOSC_DODELTA: _bindgen_ty_11 = 8;
 #[doc = " @brief Codes for internal flags (see blosc1_cbuffer_metainfo)"]
-pub type _bindgen_ty_11 = ::std::os::raw::c_uint;
+pub type _bindgen_ty_11 = ::std::os::raw::c_int;
 #[doc = "!< use dictionaries with codec"]
 pub const BLOSC2_USEDICT: _bindgen_ty_12 = 1;
 #[doc = "!< data is in big-endian ordering"]
@@ -629,13 +390,13 @@ pub const BLOSC2_BIGENDIAN: _bindgen_ty_12 = 2;
 #[doc = "!< codec is instrumented (mainly for development)"]
 pub const BLOSC2_INSTR_CODEC: _bindgen_ty_12 = 128;
 #[doc = " @brief Codes for new internal flags in Blosc2"]
-pub type _bindgen_ty_12 = ::std::os::raw::c_uint;
+pub type _bindgen_ty_12 = ::std::os::raw::c_int;
 #[doc = "!< maximum size for compression dicts"]
 pub const BLOSC2_MAXDICTSIZE: _bindgen_ty_13 = 131072;
 #[doc = "!< maximum size for blocks"]
 pub const BLOSC2_MAXBLOCKSIZE: _bindgen_ty_13 = 536866816;
 #[doc = " @brief Values for different Blosc2 capabilities"]
-pub type _bindgen_ty_13 = ::std::os::raw::c_uint;
+pub type _bindgen_ty_13 = ::std::os::raw::c_int;
 pub const BLOSC2_DEFINED_CODECS_START: _bindgen_ty_14 = 0;
 pub const BLOSC2_DEFINED_CODECS_STOP: _bindgen_ty_14 = 31;
 pub const BLOSC2_GLOBAL_REGISTERED_CODECS_START: _bindgen_ty_14 = 32;
@@ -643,7 +404,7 @@ pub const BLOSC2_GLOBAL_REGISTERED_CODECS_STOP: _bindgen_ty_14 = 159;
 pub const BLOSC2_GLOBAL_REGISTERED_CODECS: _bindgen_ty_14 = 5;
 pub const BLOSC2_USER_REGISTERED_CODECS_START: _bindgen_ty_14 = 160;
 pub const BLOSC2_USER_REGISTERED_CODECS_STOP: _bindgen_ty_14 = 255;
-pub type _bindgen_ty_14 = ::std::os::raw::c_uint;
+pub type _bindgen_ty_14 = ::std::os::raw::c_int;
 pub const BLOSC_BLOSCLZ: _bindgen_ty_15 = 0;
 pub const BLOSC_LZ4: _bindgen_ty_15 = 1;
 pub const BLOSC_LZ4HC: _bindgen_ty_15 = 2;
@@ -652,7 +413,7 @@ pub const BLOSC_ZSTD: _bindgen_ty_15 = 5;
 pub const BLOSC_LAST_CODEC: _bindgen_ty_15 = 6;
 pub const BLOSC_LAST_REGISTERED_CODEC: _bindgen_ty_15 = 36;
 #[doc = " @brief Codes for the different compressors shipped with Blosc"]
-pub type _bindgen_ty_15 = ::std::os::raw::c_uint;
+pub type _bindgen_ty_15 = ::std::os::raw::c_int;
 pub const BLOSC_BLOSCLZ_LIB: _bindgen_ty_16 = 0;
 pub const BLOSC_LZ4_LIB: _bindgen_ty_16 = 1;
 pub const BLOSC_ZLIB_LIB: _bindgen_ty_16 = 3;
@@ -661,7 +422,7 @@ pub const BLOSC_UDCODEC_LIB: _bindgen_ty_16 = 6;
 #[doc = "!< compressor library in super-chunk header"]
 pub const BLOSC_SCHUNK_LIB: _bindgen_ty_16 = 7;
 #[doc = " @brief Codes for compression libraries shipped with Blosc (code must be < 8)"]
-pub type _bindgen_ty_16 = ::std::os::raw::c_uint;
+pub type _bindgen_ty_16 = ::std::os::raw::c_int;
 pub const BLOSC_BLOSCLZ_FORMAT: _bindgen_ty_17 = 0;
 pub const BLOSC_LZ4_FORMAT: _bindgen_ty_17 = 1;
 pub const BLOSC_LZ4HC_FORMAT: _bindgen_ty_17 = 1;
@@ -669,7 +430,7 @@ pub const BLOSC_ZLIB_FORMAT: _bindgen_ty_17 = 3;
 pub const BLOSC_ZSTD_FORMAT: _bindgen_ty_17 = 4;
 pub const BLOSC_UDCODEC_FORMAT: _bindgen_ty_17 = 6;
 #[doc = " @brief The codes for compressor formats shipped with Blosc"]
-pub type _bindgen_ty_17 = ::std::os::raw::c_uint;
+pub type _bindgen_ty_17 = ::std::os::raw::c_int;
 pub const BLOSC_BLOSCLZ_VERSION_FORMAT: _bindgen_ty_18 = 1;
 pub const BLOSC_LZ4_VERSION_FORMAT: _bindgen_ty_18 = 1;
 pub const BLOSC_LZ4HC_VERSION_FORMAT: _bindgen_ty_18 = 1;
@@ -677,12 +438,12 @@ pub const BLOSC_ZLIB_VERSION_FORMAT: _bindgen_ty_18 = 1;
 pub const BLOSC_ZSTD_VERSION_FORMAT: _bindgen_ty_18 = 1;
 pub const BLOSC_UDCODEC_VERSION_FORMAT: _bindgen_ty_18 = 1;
 #[doc = " @brief The version formats for compressors shipped with Blosc.\n All versions here starts at 1"]
-pub type _bindgen_ty_18 = ::std::os::raw::c_uint;
+pub type _bindgen_ty_18 = ::std::os::raw::c_int;
 pub const BLOSC_ALWAYS_SPLIT: _bindgen_ty_19 = 1;
 pub const BLOSC_NEVER_SPLIT: _bindgen_ty_19 = 2;
 pub const BLOSC_AUTO_SPLIT: _bindgen_ty_19 = 3;
 pub const BLOSC_FORWARD_COMPAT_SPLIT: _bindgen_ty_19 = 4;
-pub type _bindgen_ty_19 = ::std::os::raw::c_uint;
+pub type _bindgen_ty_19 = ::std::os::raw::c_int;
 #[doc = "!< the version for the chunk format"]
 pub const BLOSC2_CHUNK_VERSION: _bindgen_ty_20 = 0;
 #[doc = "!< the version for the format of internal codec"]
@@ -704,7 +465,7 @@ pub const BLOSC2_CHUNK_FILTER_META: _bindgen_ty_20 = 24;
 #[doc = "!< flags specific for Blosc2 functionality"]
 pub const BLOSC2_CHUNK_BLOSC2_FLAGS: _bindgen_ty_20 = 31;
 #[doc = " @brief Offsets for fields in Blosc2 chunk header."]
-pub type _bindgen_ty_20 = ::std::os::raw::c_uint;
+pub type _bindgen_ty_20 = ::std::os::raw::c_int;
 #[doc = "!< no special value"]
 pub const BLOSC2_NO_SPECIAL: _bindgen_ty_21 = 0;
 #[doc = "!< zero special value"]
@@ -720,7 +481,7 @@ pub const BLOSC2_SPECIAL_LASTID: _bindgen_ty_21 = 4;
 #[doc = "!< special value mask (prev IDs cannot be larger than this)"]
 pub const BLOSC2_SPECIAL_MASK: _bindgen_ty_21 = 7;
 #[doc = " @brief Run lengths for special values for chunks/frames"]
-pub type _bindgen_ty_21 = ::std::os::raw::c_uint;
+pub type _bindgen_ty_21 = ::std::os::raw::c_int;
 pub const BLOSC2_ERROR_SUCCESS: _bindgen_ty_22 = 0;
 pub const BLOSC2_ERROR_FAILURE: _bindgen_ty_22 = -1;
 pub const BLOSC2_ERROR_STREAM: _bindgen_ty_22 = -2;
@@ -962,11 +723,11 @@ pub const BLOSC2_IO_FILESYSTEM: _bindgen_ty_23 = 0;
 pub const BLOSC_IO_LAST_BLOSC_DEFINED: _bindgen_ty_23 = 1;
 pub const BLOSC_IO_LAST_REGISTERED: _bindgen_ty_23 = 32;
 #[doc = "Structures and functions related with user-defined input/output."]
-pub type _bindgen_ty_23 = ::std::os::raw::c_uint;
+pub type _bindgen_ty_23 = ::std::os::raw::c_int;
 pub const BLOSC2_IO_BLOSC_DEFINED: _bindgen_ty_24 = 32;
 pub const BLOSC2_IO_REGISTERED: _bindgen_ty_24 = 160;
 pub const BLOSC2_IO_USER_DEFINED: _bindgen_ty_24 = 256;
-pub type _bindgen_ty_24 = ::std::os::raw::c_uint;
+pub type _bindgen_ty_24 = ::std::os::raw::c_int;
 pub type blosc2_open_cb = ::std::option::Option<
     unsafe extern "C" fn(
         urlpath: *const ::std::os::raw::c_char,
@@ -2736,13 +2497,13 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    pub fn blosc_set_timestamp(timestamp: *mut timespec);
+    pub fn blosc_set_timestamp(timestamp: *mut LARGE_INTEGER);
 }
 extern "C" {
-    pub fn blosc_elapsed_nsecs(start_time: timespec, end_time: timespec) -> f64;
+    pub fn blosc_elapsed_nsecs(start_time: LARGE_INTEGER, end_time: LARGE_INTEGER) -> f64;
 }
 extern "C" {
-    pub fn blosc_elapsed_secs(start_time: timespec, end_time: timespec) -> f64;
+    pub fn blosc_elapsed_secs(start_time: LARGE_INTEGER, end_time: LARGE_INTEGER) -> f64;
 }
 extern "C" {
     #[doc = " @brief Get the internal blocksize to be used during compression. 0 means\n that an automatic blocksize is computed internally.\n\n @return The size in bytes of the internal block size."]
