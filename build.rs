@@ -3,7 +3,7 @@ fn build_cmake() {
     println!("cargo:rustc-link-search=native={}", dst.display());
     println!("cargo:rustc-link-search=native={}/lib", dst.display());
     println!("cargo:rustc-link-search=native={}/lib64", dst.display());
-    // println!("cargo:rustc-link-lib=static=blosc2");
+    println!("cargo:rustc-link-lib=static=blosc2");
 }
 
 #[cfg(feature = "bindgen")]
