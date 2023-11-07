@@ -19,16 +19,32 @@ fn build_cc() {
 
     build.include("c-blosc2/include");
     add_file(&mut build, "c-blosc2/blosc");
-    add_file(&mut build, "c-blosc2/internal-complibs/lz4-1.9.4");
-    add_file(&mut build, "c-blosc2/include");
 
-    build.include("c-blosc2/internal-complibs/lz4-1.9.4");
-    build.define("HAVE_LZ4", None);
+    if cfg!(target_feature = "sse2") {
+        build.define("SHUFFLE_SSE2_ENABLED", "1");
+        if cfg!(target_env = "msvc") {
+            if cfg!(target_pointer_width = "32") {
+                build.flag("/arch:SSE2");
+            }
+        } else {
+            build.flag("-msse2");
+        }
+    }
 
-    if cfg!(feature = "zlib") {
-        add_file(&mut build, "c-blosc2/internal-complibs/zlib-ng-2.0.7");
-        build.include("c-blosc2/internal-complibs/zlib-ng-2.0.7");
-        build.define("HAVE_ZLIB", None);
+    if cfg!(target_feature = "avx2") {
+        build.define("SHUFFLE_AVX2_ENABLED", "1");
+        if cfg!(target_env = "msvc") {
+            build.flag("/arch:AVX2");
+        } else {
+            build.flag("-mavx2");
+        }
+    }
+
+    {
+        // lz4 was optional in cblosc, but seems to be required in cblosc 2
+        add_file(&mut build, "c-blosc2/internal-complibs/lz4-1.9.4");
+        build.include("c-blosc2/internal-complibs/lz4-1.9.4");
+        build.define("HAVE_LZ4", None);
     }
     if cfg!(feature = "zstd") {
         add_file(&mut build, "c-blosc2/internal-complibs/zstd-1.5.5/common");
