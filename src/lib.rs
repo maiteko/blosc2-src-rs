@@ -6,7 +6,10 @@
 
 use std::{ffi::c_void, ptr::null_mut};
 
+#[cfg(not(feature = "bindgen"))]
 include!("bindings.rs");
+#[cfg(feature = "bindgen")]
+include!(concat!(env!("OUT_DIR"), "/bindings.rs"));
 
 /// Defaults mirror BLOSC2_CPARAMS_DEFAULTS in blosc2.h
 ///
