@@ -27,7 +27,6 @@ bindgen = ["dep:bindgen"]
 zstd = []
 
 [dependencies]
-cc = "1.0"
 
 [build-dependencies]
 bindgen = { version = "0.65.1", optional = true }
