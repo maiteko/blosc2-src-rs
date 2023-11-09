@@ -23,12 +23,11 @@ description = "FFI bindings for c-blosc2"
 
 [features]
 # run bindgen when building, requires llvm
-bindgen = []
+bindgen = ["dep:bindgen"]
 zstd = []
 
 [dependencies]
-cc = "1.0"
 
 [build-dependencies]
-bindgen = "0.65.1"
+bindgen = { version = "0.65.1", optional = true }
 cc = "1.0"
