@@ -80,6 +80,12 @@ fn bindgen_rs() {
         .allowlist_type(".*blosc2.*")
         .allowlist_function(".*blosc.*")
         .allowlist_var(".*BLOSC.*")
+        // Replaced by libc::FILE
+        .blocklist_type("FILE")
+        // Replaced by i64
+        .blocklist_type("LARGE_INTEGER")
+        // Replaced by libc::timespec
+        .blocklist_type("timespec")
         .size_t_is_usize(true)
         .no_default("blosc2_[c|d]params")
         // Finish the builder and generate the bindings.
