@@ -82,10 +82,20 @@ fn bindgen_rs() {
         .allowlist_var(".*BLOSC.*")
         // Replaced by libc::FILE
         .blocklist_type("FILE")
+        .blocklist_type("_IO_FILE")
+        .blocklist_type("_IO_codecvt")
+        .blocklist_type("_IO_wide_data")
+        .blocklist_type("_IO_marker")
+        .blocklist_type("_IO_lock_t")
         // Replaced by i64
         .blocklist_type("LARGE_INTEGER")
         // Replaced by libc::timespec
         .blocklist_type("timespec")
+        // etc
+        .blocklist_type("__time_t")
+        .blocklist_type("__syscall_slong_t")
+        .blocklist_type("__off64_t")
+        .blocklist_type("__off_t")
         .size_t_is_usize(true)
         .no_default("blosc2_[c|d]params")
         // Finish the builder and generate the bindings.
