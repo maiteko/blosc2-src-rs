@@ -6,6 +6,14 @@
 
 use std::{ffi::c_void, ptr::null_mut};
 
+pub use libc::FILE;
+
+#[cfg(not(windows))]
+pub use libc::timespec;
+
+#[cfg(windows)]
+pub type LARGE_INTEGER = i64;
+
 #[cfg(not(feature = "bindgen"))]
 include!("bindings.rs");
 #[cfg(feature = "bindgen")]

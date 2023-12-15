@@ -19,37 +19,7 @@ pub const BLOSC2_MAX_METALAYERS: u32 = 16;
 pub const BLOSC2_METALAYER_NAME_MAXLEN: u32 = 31;
 pub const BLOSC2_MAX_VLMETALAYERS: u32 = 8192;
 pub const BLOSC2_VLMETALAYERS_NAME_MAXLEN: u32 = 31;
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct _iobuf {
-    pub _Placeholder: *mut ::std::os::raw::c_void,
-}
-#[test]
-fn bindgen_test_layout__iobuf() {
-    const UNINIT: ::std::mem::MaybeUninit<_iobuf> = ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<_iobuf>(),
-        8usize,
-        concat!("Size of: ", stringify!(_iobuf))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<_iobuf>(),
-        8usize,
-        concat!("Alignment of ", stringify!(_iobuf))
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._Placeholder) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_iobuf),
-            "::",
-            stringify!(_Placeholder)
-        )
-    );
-}
-pub type FILE = _iobuf;
+
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct blosc2_stdio_file {
@@ -122,136 +92,12 @@ extern "C" {
         size: i64,
     ) -> ::std::os::raw::c_int;
 }
-pub type DWORD = ::std::os::raw::c_ulong;
-pub type LONG = ::std::os::raw::c_long;
-pub type LONGLONG = ::std::os::raw::c_longlong;
-#[repr(C)]
-#[derive(Copy, Clone)]
-pub union _LARGE_INTEGER {
-    pub __bindgen_anon_1: _LARGE_INTEGER__bindgen_ty_1,
-    pub u: _LARGE_INTEGER__bindgen_ty_2,
-    pub QuadPart: LONGLONG,
-}
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct _LARGE_INTEGER__bindgen_ty_1 {
-    pub LowPart: DWORD,
-    pub HighPart: LONG,
-}
-#[test]
-fn bindgen_test_layout__LARGE_INTEGER__bindgen_ty_1() {
-    const UNINIT: ::std::mem::MaybeUninit<_LARGE_INTEGER__bindgen_ty_1> =
-        ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<_LARGE_INTEGER__bindgen_ty_1>(),
-        8usize,
-        concat!("Size of: ", stringify!(_LARGE_INTEGER__bindgen_ty_1))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<_LARGE_INTEGER__bindgen_ty_1>(),
-        4usize,
-        concat!("Alignment of ", stringify!(_LARGE_INTEGER__bindgen_ty_1))
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).LowPart) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_LARGE_INTEGER__bindgen_ty_1),
-            "::",
-            stringify!(LowPart)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).HighPart) as usize - ptr as usize },
-        4usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_LARGE_INTEGER__bindgen_ty_1),
-            "::",
-            stringify!(HighPart)
-        )
-    );
-}
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct _LARGE_INTEGER__bindgen_ty_2 {
-    pub LowPart: DWORD,
-    pub HighPart: LONG,
-}
-#[test]
-fn bindgen_test_layout__LARGE_INTEGER__bindgen_ty_2() {
-    const UNINIT: ::std::mem::MaybeUninit<_LARGE_INTEGER__bindgen_ty_2> =
-        ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<_LARGE_INTEGER__bindgen_ty_2>(),
-        8usize,
-        concat!("Size of: ", stringify!(_LARGE_INTEGER__bindgen_ty_2))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<_LARGE_INTEGER__bindgen_ty_2>(),
-        4usize,
-        concat!("Alignment of ", stringify!(_LARGE_INTEGER__bindgen_ty_2))
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).LowPart) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_LARGE_INTEGER__bindgen_ty_2),
-            "::",
-            stringify!(LowPart)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).HighPart) as usize - ptr as usize },
-        4usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_LARGE_INTEGER__bindgen_ty_2),
-            "::",
-            stringify!(HighPart)
-        )
-    );
-}
-#[test]
-fn bindgen_test_layout__LARGE_INTEGER() {
-    const UNINIT: ::std::mem::MaybeUninit<_LARGE_INTEGER> = ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<_LARGE_INTEGER>(),
-        8usize,
-        concat!("Size of: ", stringify!(_LARGE_INTEGER))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<_LARGE_INTEGER>(),
-        8usize,
-        concat!("Alignment of ", stringify!(_LARGE_INTEGER))
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).u) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_LARGE_INTEGER),
-            "::",
-            stringify!(u)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).QuadPart) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_LARGE_INTEGER),
-            "::",
-            stringify!(QuadPart)
-        )
-    );
-}
-pub type LARGE_INTEGER = _LARGE_INTEGER;
+
+#[cfg(windows)]
+pub type blosc_timestamp_t = LARGE_INTEGER;
+#[cfg(not(windows))]
+pub type blosc_timestamp_t = timespec;
+
 pub const BLOSC1_VERSION_FORMAT_PRE1: _bindgen_ty_4 = 1;
 pub const BLOSC1_VERSION_FORMAT: _bindgen_ty_4 = 2;
 pub const BLOSC2_VERSION_FORMAT_ALPHA: _bindgen_ty_4 = 3;
@@ -2497,13 +2343,13 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    pub fn blosc_set_timestamp(timestamp: *mut LARGE_INTEGER);
+    pub fn blosc_set_timestamp(timestamp: *mut blosc_timestamp_t);
 }
 extern "C" {
-    pub fn blosc_elapsed_nsecs(start_time: LARGE_INTEGER, end_time: LARGE_INTEGER) -> f64;
+    pub fn blosc_elapsed_nsecs(start_time: blosc_timestamp_t, end_time: blosc_timestamp_t) -> f64;
 }
 extern "C" {
-    pub fn blosc_elapsed_secs(start_time: LARGE_INTEGER, end_time: LARGE_INTEGER) -> f64;
+    pub fn blosc_elapsed_secs(start_time: blosc_timestamp_t, end_time: blosc_timestamp_t) -> f64;
 }
 extern "C" {
     #[doc = " @brief Get the internal blocksize to be used during compression. 0 means\n that an automatic blocksize is computed internally.\n\n @return The size in bytes of the internal block size."]
