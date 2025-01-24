@@ -42,22 +42,22 @@ fn build_cc() {
 
     {
         // lz4 was optional in cblosc, but seems to be required in cblosc 2
-        add_file(&mut build, "c-blosc2/internal-complibs/lz4-1.9.4");
-        build.include("c-blosc2/internal-complibs/lz4-1.9.4");
+        add_file(&mut build, "c-blosc2/internal-complibs/lz4-1.10.0");
+        build.include("c-blosc2/internal-complibs/lz4-1.10.0");
         build.define("HAVE_LZ4", None);
     }
     if cfg!(feature = "zstd") {
-        add_file(&mut build, "c-blosc2/internal-complibs/zstd-1.5.5/common");
-        add_file(&mut build, "c-blosc2/internal-complibs/zstd-1.5.5/compress");
+        add_file(&mut build, "c-blosc2/internal-complibs/zstd-1.5.6/common");
+        add_file(&mut build, "c-blosc2/internal-complibs/zstd-1.5.6/compress");
         add_file(
             &mut build,
-            "c-blosc2/internal-complibs/zstd-1.5.5/decompress",
+            "c-blosc2/internal-complibs/zstd-1.5.6/decompress",
         );
         add_file(
             &mut build,
-            "c-blosc2/internal-complibs/zstd-1.5.5/dictBuilder",
+            "c-blosc2/internal-complibs/zstd-1.5.6/dictBuilder",
         );
-        build.include("c-blosc2/internal-complibs/zstd-1.5.5");
+        build.include("c-blosc2/internal-complibs/zstd-1.5.6");
         build.define("HAVE_ZSTD", None);
     }
 
